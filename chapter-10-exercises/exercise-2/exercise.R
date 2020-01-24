@@ -47,13 +47,13 @@ salaries[ salaries$adjustments == biggest_raise, "adjustments"]
 salaries[ salaries$adjustments == biggest_raise, "employees"]
 
 # What was the largest decrease in salaries between the two years?
-
+largest_decrease <- min(salaries$adjustments)
 
 # What was the name of the employee who recieved largest decrease in salary?
-
+salaries[ salaries$adjustments ==  largest_decrease, "employees"]
 
 # What was the average salary change?
-
+mean(salaries$adjustments)
 
 # For people who did not get a raise, how much money did they lose on average?
 
@@ -64,4 +64,4 @@ mean(paycut)
 ## how you generated the salaries?
 
 # Write a .csv file of your salary data to your working directory
-
+write.csv(salaries, "salaries.csv")
